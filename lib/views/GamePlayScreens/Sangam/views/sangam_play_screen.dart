@@ -358,11 +358,16 @@ class SangamPlayScreen extends StatelessWidget {
                                 controller.pointsController.text,
                                 controller.sangamController.text,
                               )
+
+
                               );
+
+                              controller.clearTextControllers();
+
                             }
                           },
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 11),
                       ],
                     ),
                   ),
