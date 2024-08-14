@@ -367,7 +367,7 @@ class SangamPlayScreen extends StatelessWidget {
                             }
                           },
                         ),
-                        const SizedBox(height: 11),
+                        const SizedBox(height: 10),
                       ],
                     ),
                   ),
