@@ -14,24 +14,19 @@ class ProfilePageScreen extends StatefulWidget {
 
   @override
   State<ProfilePageScreen> createState() => _ProfilePageScreenState();
-}
+  }
 
 class _ProfilePageScreenState extends State<ProfilePageScreen> {
   final profileScreenController = Get.put(ProfileScreenController());
   final HomeController honecontroller = Get.put(HomeController());
 
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-
-
-
     return Scaffold(
       backgroundColor: Colors.red,
       body: Obx(() {
-
         return Column(
           children: [
             Container(
@@ -59,7 +54,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                     ),
                   ),
                   Text(
-                    "${honecontroller.phoneNumber}",
+                    "${profileScreenController.mobileNumber}",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -75,19 +70,19 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                 width: width,
                 height: height * 0.58,
                 decoration: BoxDecoration(
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                         offset: Offset(1, -1),
                         color: Colors.grey,
                         blurRadius: 30,
                         spreadRadius: 1),
                   ],
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
                   color: Colors.grey.shade300,
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
                     SizedBox(height: 10),
                     Text(
                       "Profile Details",
@@ -115,7 +110,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                         height: width * 0.087,
                         width: width * 0.11,
                       ),
-                      title: Text("Address ",
+                      title: const Text("Address",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 21)),
                     ),
@@ -136,17 +131,14 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                         height: width * 0.087,
                         width: width * 0.11,
                       ),
-                      title: Text("Bank Details",
+                      title: const Text("Bank Details",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 21)),
                     ),
                     ListTile(
                       splashColor: Colors.red,
                       onTap: () {
-
-                        phonePeControllerSheet.show(context, profileScreenController.addressTextController);
-
-
+                        phonePeControllerSheet.show(context, profileScreenController.phonepeNumberController);
                       },
                       tileColor: Colors.red,
                       leading: Image.asset(
@@ -154,39 +146,28 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                         height: width * 0.087,
                         width: width * 0.11,
                       ),
-                      title: Text("PhonePe",
+                      title: const Text("PhonePe",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 21)),
                     ),
                     ListTile(
                       splashColor: Colors.red,
                       onTap: () {
-
-                        phonePeControllerSheet.show(context, profileScreenController.addressTextController);
-
+                        phonePeControllerSheet.show(context, profileScreenController.paytmNumberController);
                       },
                       tileColor: Colors.red,
                       leading: Image.asset(
                         Assets.iconsPaytm,
                         height: width * 0.1,
-                        width: width * 0.11,
-                      ),
-                      title: Text("Paytm",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 21)),
-                    ),
+                        width: width * 0.11),
+                      title: const Text("Paytm",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21)),),
                     ListTile(
                       splashColor: Colors.red,
-                      onTap: () {
-                        phonePeControllerSheet.show(context, profileScreenController.addressTextController);
-                        },
+                      onTap: () {phonePeControllerSheet.show(context, profileScreenController.gpayNumberController);},
                       tileColor: Colors.red,
                       leading: Image.asset(Assets.iconsGooglePay,
                           height: width * 0.11, width: width * 0.11),
-                      title: Text("Googel Pay",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 21)),
-                    ),
+                      title: const Text("Googel Pay",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21))),
                   ],
                 ),
               ),

@@ -4,17 +4,20 @@ import 'package:flutter/material.dart';
 
 
 Widget common_textfield_for_snaclbar(double width,
-   // KeyboardType h,
+
     String hint,
     String label,
     TextEditingController textController,
-    String? Function(String?)? validator) {
+    String? Function(String?)? validator,
+{  TextInputType  inputMethod = TextInputType.text}
+
+    ) {
   return Container(
     margin: EdgeInsets.only(top: 10),
     width: width * 0.95,
     child: TextFormField(
       controller: textController,
-      keyboardType: TextInputType.text,
+      keyboardType: inputMethod,
       enableSuggestions: false,
       style: const TextStyle(
         fontWeight: FontWeight.bold,

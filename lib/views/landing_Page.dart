@@ -44,7 +44,7 @@ class _LandingPageState extends State<LandingPage> {
         leading: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(4.0),
               child:  Image.asset(Assets.imagesLogo)  ,
             ),
             Obx(() {
@@ -54,7 +54,7 @@ class _LandingPageState extends State<LandingPage> {
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: width * 0.04),
+                      fontSize: homecontroller.username.value.length < 12 ? width * 0.04 : width * 0.03   ),
                 ),
               );
             })
@@ -67,10 +67,10 @@ class _LandingPageState extends State<LandingPage> {
             },
             child:        Obx(() => Row(
               children: [
-                Text( homecontroller.walletBalance.value.toString() ,
+                Text( homecontroller.walletBalance.value.toInt().toString() ,
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: width * 0.050,
+                        fontSize: width * 0.040,
                         fontWeight: FontWeight.bold)),
                 SizedBox(
                   width: 4,

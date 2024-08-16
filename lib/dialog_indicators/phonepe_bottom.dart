@@ -9,14 +9,9 @@ import '../views/singleViewa/controller/profilePageController.dart';
 class phonePeControllerSheet extends StatelessWidget {
   TextEditingController phonePeTextControllerSheet;
 
-
-  phonePeControllerSheet({
-    required this.phonePeTextControllerSheet,
-
-  });
+  phonePeControllerSheet({required this.phonePeTextControllerSheet,});
 
   final profileScreenController = Get.put(ProfileScreenController());
-
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +35,7 @@ class phonePeControllerSheet extends StatelessWidget {
                     "Enter your PhonePe Number",
                     "PhonePe Number",
                     phonePeTextControllerSheet,
+                    inputMethod: TextInputType.number,
                     null,
                   ),
 
@@ -49,7 +45,8 @@ class phonePeControllerSheet extends StatelessWidget {
                     buttonTitle: "Save Change",
                     onpressed: () {
                       print(phonePeTextControllerSheet.text);
-                      // Handle save action
+                      profileScreenController.updateUser();
+
                     },
                   ),
 

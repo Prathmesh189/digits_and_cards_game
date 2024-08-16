@@ -24,6 +24,7 @@ class Constants {
   static String SendBid = "/bidMaster";
   static String ShreeSendBid = "/shreeStarLineBidMaster";
   static String getUSer = "/user/editUser";
+  static String editUser = "/user";
   static String addFundRwquest = "/fundRequest";
   static String getNotiication = "/notification/getActiveList";
 

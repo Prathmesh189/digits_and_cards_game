@@ -50,6 +50,7 @@ class AddressBottomSheet extends StatelessWidget {
                     width,
                     "Enter your Pin-code",
                     "Pin-Code",
+                    inputMethod: TextInputType.number,
                     profileScreenController.pinTextController,
                     null,
                   ),
@@ -57,7 +58,9 @@ class AddressBottomSheet extends StatelessWidget {
                   CustomSnackBarSaveButton(
                     buttonTitle: "Save Change",
                     onpressed: () {
+                      profileScreenController.updateUser();
                       print(profileScreenController.addressTextController.text);
+
                       // Handle save action
                     },
                   ),

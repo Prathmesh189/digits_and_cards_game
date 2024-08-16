@@ -38,40 +38,44 @@ class BankDetailsBottom extends StatelessWidget {
                   Center(child: Text("Edit you bank details")),
                   common_textfield_for_snaclbar(
                     width,
-                    "Enter your bank account Number",
-                    "Bank Account No. Number",
+                    "Enter your bank account number",
+                    "Bank Account Number",
                     accountNumberController,
+                    inputMethod: TextInputType.number,
                     null,
                   ),
                   SizedBox(height: 16),
                   common_textfield_for_snaclbar(
                     width,
-                    "Enter Account holder Number",
-                    "Number ",
-                    accountHolderNameController,
-                    null,
-                  ),
-                  SizedBox(height: 16),
-                  common_textfield_for_snaclbar(
-                    width,
-                    "Enter your Bank Name",
-                    "Bank Number",
+                    "Enter Bank Name",
+                    "Bank Name",
                     bankNameController,
                     null,
                   ),
                   SizedBox(height: 16),
                   common_textfield_for_snaclbar(
                     width,
-                    "Enter your Bank Name",
-                    "Bank Number",
+                    "Enter your Baank IFSC Code",
+                    "IFSC Number",
                     ifscCodeController,
+                    inputMethod: TextInputType.number,
+                    null,
+                  ),
+                  SizedBox(height: 16),
+                  common_textfield_for_snaclbar(
+                    width,
+                    "Enter your Account Holder Name",
+                    "Account holder Name",
+                    accountHolderNameController,
                     null,
                   ),
                   SizedBox(height: 16),
                   CustomSnackBarSaveButton(
                     buttonTitle: "Save Change",
                     onpressed: () {
-                      print(profileScreenController.addressTextController.text);
+
+
+                      profileScreenController.updateUser();
                       // Handle save action
                     },
                   ),
